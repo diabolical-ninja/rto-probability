@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "rto-probability"
+version = "0.1.0"
+description = ""
+authors = ["Yass Eltahir <yass.eltahir@coles.com.au>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pandas = "^2.2.3"
+plotly = "^5.24.1"
+nbformat = ">=4.2.0"
+tqdm = "^4.67.1"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+black = "^24.10.0"
+ruff = "^0.9.3"
+mypy = "^1.14.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
