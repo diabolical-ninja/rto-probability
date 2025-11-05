@@ -1,5 +1,4 @@
 # %%
-# %%
 # create an output directory if it doesn't exist, using python best practices
 import os
 from itertools import product
@@ -9,8 +8,8 @@ import plotly.express as px
 
 from src.simulator import calculate_office_overlap_probability
 
-output_dir = "results"
-os.makedirs(output_dir, exist_ok=True)
+OUTPUT_DIR = "results"
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 
 # %%
@@ -20,7 +19,6 @@ MAX_DAYS_PER_WEEK = 5
 PROBABILITY_TYPE = ["at_least_1_day", "all_days"]
 
 # %%
-
 for prob_type in PROBABILITY_TYPE:
 
     # Iterate across the number of teams & number days per week to build a matrix of probabilities
@@ -63,8 +61,6 @@ for prob_type in PROBABILITY_TYPE:
     fig.update_xaxes(side="bottom", tickmode="linear")
     fig.update_yaxes(tickmode="linear")
 
-    fig.write_html(f"{output_dir}/heatmap_{prob_type}_teams_vs_days_optimal.html")
+    fig.write_html(f"{OUTPUT_DIR}/heatmap_{prob_type}_teams_vs_days.html")
 
-print("Analysis complete. Results available in results/ directory")
-
-# %%
+print("Analysis complete. Results available in `results/` directory")
